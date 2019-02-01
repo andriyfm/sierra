@@ -1,0 +1,79 @@
+extends template/layout
+append meta
+  title Sierra One Page HTML Template
+  
+append header
+    
+  // BANNER SECTION
+  - var image = "mia-baker-322596.jpg"
+  //- - var image = "placeholder-image-16x9.svg"
+  section#banner-section(style="background-image:url('img/"+image+"')")
+    .banner-overlay
+    +banner-content()
+  
+append main  
+        
+  // SERVICES SECTION
+  - var image1 = "rawpixel-com-252127.jpg"
+  - var image2 = "rawpixel-com-323217.jpg"
+  - var image3 = "rawpixel-com-351765.jpg"
+  //- - var image = "placeholder-image-800x345.svg"
+  section#services-section
+    +service-item("green", image1, "flaticon-005-pencil-2")
+    +service-item("red", image2, "flaticon-042-bulb")
+    +service-item("blue", image3, "flaticon-050-pencil-case")
+
+  // MISC SECTION
+  - var image = "mia-baker-322596.jpg" 
+  //- - var image = "placeholder-image-16x9.svg"  
+  - var miscItems = {23:"Years of Experience", 45:"Successful Projects", 18:"Partner Programs", 76:"Technical Supports"}
+  
+  section#misc-section(style="background-image:url('img/"+image+"')")
+    .misc-overlay
+    .container: .row
+      each name, total in miscItems
+        .col-sm-3.col-xs-6
+          +misc-item(name, total)
+
+  // TESTIMONY SECTION
+  section#testimony-section
+    - var testimonyItems = {"Jhone Doe":"Webmaster of Neverland", "Desi Ratnasari":"Founder of BalaBala.com", "Ridwan Kamil":"Walikota Bandung, indonesia"}
+    - var testimonyItems = {1:"Jhone Doe", 2:"Desi Ratnasari", 3:"Ridwan Kamil"}
+    //- - var image = "placeholder-image-1x1.svg"
+    
+    .container: .row
+      .col-sm-12
+        +section-title("What People Say")
+              
+      each name, index in testimonyItems
+        .col-sm-4
+          +testimony-item(null, "testimony-"+index+".jpg", name, "Founder of Neverland")
+    
+  // CONTACT SECTION
+  section#contact-section
+    .container: .row
+      .col-sm-6
+        +contact-item("Get In Touch", "With Us", "flaticon-038-notes-1", "info")
+      .col-sm-6
+        +contact-item("Subscribe To", "Our Newslatter", "flaticon-020-pencil-1", "subscribe")
+
+append footer
+  // FOOTER SECTION
+  section#footer-section
+    .container: .row
+      
+      .col-xs-6
+        .footer-header
+          .logo
+            // Main Logo
+            img(src="img/sierra-logo-light.svg", alt="sierra logo")
+          .tagline
+            // Tagline
+            p One Page Bussines HTML Template
+            
+      .col-xs-6
+        // Social Media Link
+        .social-media
+          a(href="http://facebook.com" alt="facebook"): i.fa.fa-facebook.fa-2x
+          a(href="http://twitter.com" alt="twitter"): i.fa.fa-twitter.fa-2x
+          a(href="http://plus.google.com" alt="google plus"): i.fa.fa-google.fa-2x

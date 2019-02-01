@@ -1,0 +1,14 @@
+// Debugging Base Color Only
+$temp-color: pink
+
+// Debugging Purpose Only
+@mixin tempBg()
+  background: transparentize($temp-color, 0.8)
+  border: 1px solid transparentize($temp-color, 0.6)
+
+// Use this mixin for centering element block
+@mixin centering($position)
+  position: $position
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)

@@ -1,0 +1,30 @@
+//- Testimony Item
+mixin testimony-item(message, img, name, title)
+  .testimony-item
+    .testimony-head
+      // Testimony Author Message
+      if message == null
+        p Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+      else
+        p #{message}
+      
+    .testimony-body
+      // Testimony Author Photo
+      figure
+        if img == null
+          img(src="img/placeholder-image-1x1.svg", alt="testimony author photo")
+        else
+          img(src="img/" + img alt="testimony author photo")
+            
+      .detail
+        // Testimony Author Name
+        if name == null
+          h6 Testimony Author Name
+        else
+          h6 #{name}
+        
+        // Testimony Author Title
+        if title == null
+          p Testimony Author Title
+        else
+          p #{title}

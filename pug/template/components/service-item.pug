@@ -1,0 +1,50 @@
+//- Services Item
+mixin service-item(type, featureImg, icon)
+  .service-item(class=type)
+    .service-header
+      
+      // Service Icon
+      .icon
+        if icon == null
+          span.flaticon-005-pencil-2
+        else
+          span(class=icon)
+      
+      // Service Name    
+      h2
+        | Fast
+        br
+        | Online
+        br
+        | Support
+        
+      case type
+        when "green"
+          .hr.hr-green
+        when "red"
+          .hr.hr-red
+        when "blue"
+          .hr.hr-blue
+        default
+          .hr.hr-green
+          
+      // Service Description
+      p Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.
+      
+    .service-body
+      
+      // Service Feature Image
+      figure
+        if featureImg == null
+          img(src="img/placeholder-image-800x345.svg" alt="feature image")
+        else
+          img(src="img/" + featureImg alt="feature image")
+            
+      .content
+        // Service Title
+        h2 We Teach You How To Improve Your Bussines
+        
+        .hr.hr-default
+        
+        // Service Description
+        p Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.

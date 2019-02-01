@@ -1,0 +1,67 @@
+//- Contact Item
+mixin contact-item(titleLine1, titleLine2, icon, add)
+  .contact-item
+    .contact-item-head
+      
+      // Contact Item Icon
+      .icon
+        if icon == null
+          span.flaticon-026-notebook
+        else
+          span(class=icon)
+            
+      // Contact Item Title
+      if titleLine1 == null || titleLine2 == null
+        h2 Title Line 1
+          br
+          span Title Line 2
+      else
+        h2 #{titleLine1}
+          br
+          span #{titleLine2}
+        
+    .contact-item-body
+      
+      case add
+        when "info"            
+          // Contact Item Description
+          if description == null
+            p.description Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. 
+          else
+            p.description #{address}
+            
+          // Contact Item Address
+          if address == null
+            p.address Jl. Babakan Ciparaya 137A/194A Bandung, Indonesia
+          else
+            p.address #{address}
+            
+          // Contact Item Phone
+          if phone == null
+            p.phone (022) 1254 44585 / (022) 8794 5184
+          else
+            p.phone #{phone}
+            
+          // Contact Item Email
+          if email == null
+            p.email info@yoursite.com
+          else
+            p.email #{email}
+            
+        when "subscribe"
+          // Contact Item Description
+          if description == null
+            p.description Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. 
+          else
+            p.description #{address}
+            
+          // Contact Item Subscribe Form
+          form
+            .form-group
+              label(for="email").sr-only
+              input(type="email" placeholder="Your Email").form-control#email
+            .form-group
+              input(type="submit" value="Submit").btn.btn-default
+            
+        default
+          p: em(style="color:red") tentukan nilai argument "add" pada mixin ini.

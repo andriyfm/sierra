@@ -1,0 +1,82 @@
+/* Contact Section
+#contact-section
+  padding: 80px 0
+  background: tint($base-dark-color, 10)
+
+/* Contact Item
+.contact-item
+  .contact-item-head
+    display: flex
+    flex-direction: row
+    align-items: center
+    margin-bottom: 55px
+
+    h2
+      max-width: 260px
+      margin: auto 0
+      color: $base-white-color
+      span
+        color: $primary-color
+
+    .icon
+      +size(100px)
+      background: $primary-color
+      margin-right: 30px
+      border-radius: 100%
+      position: relative
+      span:before
+        +centering(absolute)
+        font-size: 48px
+        padding: 0
+        margin: 0
+        color: $base-white-color
+
+  .contact-item-body
+    color: #919191
+    .description
+      margin-bottom: 50px
+
+    .address,
+    .phone,
+    .email
+      font-weight: 700
+      margin-bottom: 10px
+
+    .email
+      margin-bottom: 0
+      color: shade($primary-color, 30)
+
+    form
+      display: flex
+      justify-content: flex-start
+
+    input[type="email"]
+      margin-right: 20px
+      width: 323px
+
+@media (max-width: 767px)
+  #contact-section
+    padding-bottom: 0 + 20px
+
+  .contact-item
+    text-align: center
+    margin-bottom: 60px
+
+    .contact-item-head
+      flex-direction: column
+
+      .icon
+        margin-right: 0
+        margin-bottom: 20px
+
+    .contact-item-body
+      form
+        flex-direction: column
+
+      input[type="email"]
+        width: auto
+        margin-right: 0
+        margin: 0 auto
+
+      .form-group:last-child
+        margin-bottom: 0

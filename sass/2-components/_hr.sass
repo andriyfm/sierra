@@ -1,0 +1,30 @@
+.hr
+  width: 360px
+  height: 4px
+  position: relative
+  margin-bottom: 40px
+  &:after
+    content: ""
+    min-width: 160px
+    height: 4px
+    position: absolute
+
+.hr-default
+  background: tint($base-gray-color, 80)
+  &::after
+    background: tint($base-gray-color, 60)
+
+.hr-green
+  background: darken($primary-color, 5)
+  &::after
+    background: lighten($primary-color, 10)
+
+.hr-red
+  background: darken($base-red-color, 5)
+  &::after
+    background: lighten($base-red-color, 10)
+
+.hr-blue
+  background: darken($base-blue-color, 5)
+  &::after
+    background: lighten($base-blue-color, 10)

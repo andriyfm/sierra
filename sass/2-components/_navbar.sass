@@ -1,0 +1,46 @@
+.navbar-default
+  background: transparent
+  border: 0
+  transition: all 500ms ease-out
+
+  .navbar-brand
+    width: auto
+    height: 80px
+    transition: all 400ms ease-out
+
+  .navbar-toggle
+    transform: translateY(45%)
+    border-color: shade($primary-color, 60)
+    &:hover
+      background: shade($primary-color, 50)
+    &:focus
+      background: shade($primary-color, 40)
+
+    .icon-bar
+      background: $primary-color
+
+  .navbar-collapse
+    border: 0
+
+  .navbar-nav
+    transform: translateY(25%)
+    transition: all 400ms ease-out
+    li > a
+      color: $base-gray-color
+      font-size: 14px
+      font-weight: 700
+      text-transform: capitalize
+    li > a:hover,
+    li > a:focus,
+      color: $primary-color
+      outline: none
+
+@media (max-width: 768px)
+  .navbar-default
+    background: $base-dark-color
+    .navbar-nav
+      transform: translateY(0)
+    .navbar-toggle
+      transform: translateY(15%)
+    .navbar-brand
+      height: 60px

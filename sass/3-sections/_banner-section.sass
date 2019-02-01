@@ -1,0 +1,57 @@
+#banner-section
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  background-attachment: fixed
+  position: relative
+
+.banner-overlay
+  background: transparentize($base-dark-color, 0.2)
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  left: 0
+
+.banner-content
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  background-attachment: fixed
+  width: 100%
+  height: 100vh
+  position: relative
+
+  .banner-header
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+
+  h1
+    color: $primary-color
+    font-size: 72px
+    line-height: 100% * (72px / 72px)
+
+  .hr
+    margin-bottom: 60px
+    width: 300px
+
+@media (max-width: 500px)
+  #banner-section
+    .banner-content
+      h1
+        font-size: 40px
+      .hr
+        display: none
+
+@media (max-width: 767px)
+  .banner-content
+    h1
+      text-align: center
+      font-size: 60px
+
+    .hr::after
+      transform: translate(50%)
+
+    .banner-header
+      +centering(absolute)

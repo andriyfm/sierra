@@ -1,0 +1,36 @@
+/* Testimony Item
+.testimony-item
+
+  .testimony-head
+    padding: 28px
+    background: tint($base-gray-color, 80)
+    margin-bottom: 35px
+
+  .testimony-body
+    display: flex
+    align-items: center
+
+    figure
+      overflow: hidden
+      +size(80px)
+      background: $base-white-color
+      margin-right: 20px
+      border: 2px solid $primary-color
+      border-radius: 100%
+      img
+        width: 100%
+        height: auto
+        +centering(relative)
+
+    .detail
+      h6
+        font-weight: 700
+        margin-bottom: 10px
+      p
+        font-style: italic
+
+@media (max-width: 767px)
+  .testimony-item
+    margin-bottom: 30px
+    .testimony-body
+      justify-content: center

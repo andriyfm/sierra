@@ -1,0 +1,17 @@
+//- Misc Item
+mixin misc-item(name, total)
+  .misc-item
+    
+    .misc-total
+      // Misc Total
+      if total == null
+        h2 99
+      else
+        h2 #{total}
+        
+    .misc-name
+      // Misc Name
+      if name == null
+        h6 Misc Name
+      else
+        h6 #{name}

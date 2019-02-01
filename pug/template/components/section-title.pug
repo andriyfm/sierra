@@ -1,0 +1,10 @@
+//- Section Title
+mixin section-title(title)
+  .section-title
+    // Section Name
+    if title == null
+      h2 Section Title
+    else
+      h2 #{title}
+      
+    .hr.hr-default

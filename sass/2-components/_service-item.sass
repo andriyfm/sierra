@@ -1,0 +1,102 @@
+/* Service Item
+.service-item
+  position: relative
+  width: auto
+  margin-bottom: 80px
+  display: flex
+  flex-direction: row
+  align-items: flex-start
+
+  .hr
+    margin-bottom: 50px
+    min-width: 0
+    width: auto
+
+  .service-body
+    width: 800px
+    height: auto
+
+    figure
+      overflow: hidden
+      width: 100%
+      height: 300px
+      img
+        width: 800px
+        height: auto
+        +centering(relative)
+
+  .service-header
+    width: 300px
+    padding: 30px
+
+    p, h2
+      color: $base-white-color
+
+    .icon
+      +size(120px)
+      background: $base-white-color
+      border-radius: 100%
+      margin-bottom: 34px
+      position: relative
+      span
+        +centering(absolute)
+        &::before
+          font-size: 72px
+          color: $primary-color
+          margin: 0
+          padding: 0
+
+  &.green
+    justify-content: flex-end
+    .service-header
+      background-color: $primary-color
+      .icon span::before
+        color: $primary-color
+    .service-body
+      .content
+        padding: 50px 25% 0 50px
+
+  &.red
+    justify-content: flex-start
+    .service-header
+      order: 2
+      background-color: $base-red-color
+      .icon span::before
+        color: $base-red-color
+    .service-body
+      .content
+        padding: 50px 50px 0 25%
+
+  &.blue
+    justify-content: flex-end
+    .service-header
+      background-color: $base-blue-color
+      .icon span::before
+        color: $base-blue-color
+    .service-body
+      .content
+        padding: 50px 25% 0 50px
+
+@media (max-width: 768px)
+  .service-item
+    flex-direction: column
+
+    &.green,
+    &.red,
+    &.blue
+      .service-header
+        display: none
+      .service-body
+        .content
+          padding-left: 30px
+          padding-right: 30px
+
+    &.red
+      .service-header
+        order: 1
+
+    .service-header
+      width: 100%
+
+    .service-body
+      width: 100%
